@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jzenn Programming - Lessons</title>
+    <link rel="stylesheet" href="lessons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+            background: #34495e;
+            border-radius: 5px;
+        }
+        .sidebar ul li a:hover {
+            background: #1abc9c;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: 70%;
+        }
+        .lesson-content {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+        #lesson-container {
+            margin-top: 20px;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2>Lessons</h2>
+        <ul>
+            <li><a href="#" onclick="showLesson('intro')">Introduction</a></li>
+            <li><a href="#" onclick="showLesson('html')">HTML Basics</a></li>
+            <li><a href="#" onclick="showLesson('css')">CSS Essentials</a></li>
+            <li><a href="#" onclick="showLesson('js-loops')">Loops and Arrays</a></li>
+            <li><a href="#" onclick="showLesson('js-logical')">Logical Statements</a></li>
+            <li><a href="#" onclick="showLesson('js-functions')">JavaScript Functions</a></li>
+            <li><a href="#" onclick="showLesson('js-methods')">Built-in JavaScript Methods</a></li>
+            <li><a href="#" onclick="showLesson('js-dom')">The Document Object Model (DOM)</a></li>
+            <li><a href="#" onclick="showLesson('js-events')">Interactive Content and Event Listeners</a></li>
+            <li><a href="#" onclick="showLesson('js-intermediate')">Intermediate JavaScript</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <section class="content">
+        <h1>Web Page Programming (Using HTML and JavaScript)</h1>
+        <div id="lesson-container">
+            <div id="intro" class="lesson-content active">
+                <h2>Introduction to Web Development</h2>
+                <p>Web development involves creating, building, and maintaining websites using HTML, CSS, and JavaScript.</p>
+            </div>
+
+            <div id="html" class="lesson-content">
+                <h2>Chapter 1: HTML Basics</h2>
+                <p>HTML (Hypertext Markup Language) is the foundation of web pages, used to structure content.</p>
+            </div>
+
+            <div id="css" class="lesson-content">
+                <h2>Chapter 2: CSS Essentials</h2>
+                <p>CSS (Cascading Style Sheets) styles and enhances web page visuals.</p>
+            </div>
+
+            <div id="js-loops" class="lesson-content">
+                <h2>Chapter 3: Loops and Arrays</h2>
+                <p>Loops automate repetitive tasks, while arrays store multiple values efficiently.</p>
+            </div>
+
+            <div id="js-logical" class="lesson-content">
+                <h2>Chapter 4: Logical Statements</h2>
+                <p>Logical statements control the flow of execution based on conditions.</p>
+            </div>
+
+            <div id="js-functions" class="lesson-content">
+                <h2>Chapter 5: JavaScript Functions</h2>
+                <p>Functions allow reusable blocks of code for better efficiency.</p>
+            </div>
+
+            <div id="js-methods" class="lesson-content">
+                <h2>Chapter 6: Built-in JavaScript Methods</h2>
+                <p>JavaScript has many built-in methods to work with strings, numbers, and arrays.</p>
+            </div>
+
+            <div id="js-dom" class="lesson-content">
+                <h2>Chapter 7: The Document Object Model (DOM)</h2>
+                <p>The DOM lets JavaScript dynamically interact with and modify HTML.</p>
+            </div>
+
+            <div id="js-events" class="lesson-content">
+                <h2>Chapter 8: Interactive Content and Event Listeners</h2>
+                <p>Event listeners allow JavaScript to respond to user actions.</p>
+            </div>
+
+            <div id="js-intermediate" class="lesson-content">
+                <h2>Chapter 9: Intermediate JavaScript</h2>
+                <p>Advanced JavaScript topics like closures, async programming, and ES6+ features.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showLesson(lessonId) {
+            let lessons = document.querySelectorAll('.lesson-content');
+            lessons.forEach(lesson => {
+                lesson.classList.remove('active');
+            });
+            document.getElementById(lessonId).classList.add('active');
+        }
+    </script>
+
+    <script src="/script.js"></script>
+
+</body>
+</html>
